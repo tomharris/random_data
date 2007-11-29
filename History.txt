@@ -1,3 +1,21 @@
+== 1.2.0 2007-09-17
+
+Thanks to Paul Barry and Hugh Sasse for some awesome patches!
+
+* 1 major enhancement:
+  * Added method_missing to Random class, which looks for a method_name.dat and fetches a random line for you (see docs for details) (Hugh Sasse)
+  * added Random.date_between method to get a date between 2 given dates (Paul Barry)
+  * added Random.boolean method to get a random true or false (Paul Barry)
+  * added Random.number to get a random number less than a number or within a given range (Paul Barry)
+
+* 1 minor enhancement:
+  * enhanced Random.date method to handle a Range as well as a Fixnum, which allows you to get a date guaranteed to be in the past (Paul Barry)
+
+* 1 minor fix:
+  * Location sources organized into more understandable categories, for easier future expansion (Hugh Sasse)
+  * Fixed path of require statements in random_data.rb (Paul Barry)
+  * make initial never return nil, because if it returns nil then ContactInfo#email can thrown and error because it tries to call nil. (Paul Barry)
+  
 == 1.0.1 2007-09-17
 
 * 1 minor fix:

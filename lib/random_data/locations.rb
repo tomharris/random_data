@@ -4,8 +4,14 @@ module RandomData
   
   module Locations
 
-    @@streetnames = %w( Park Washington Maple Oak Lincoln Walnut Elm Jefferson Highland Madison Pine Cedar Sunset Jackson Franklin Willow 3rd Wilson 2nd Laurel 
-                        5th Chestnut 4th Adams Virginia Linden Woodland Cherry Rose 1st)
+    
+    trees = %w( Acacia Beech Birch Cedar Cherry Chestnut Elm Larch Laurel
+                Linden Maple Oak Pine Rose Walnut Willow)
+    people = %w( Adams Franklin Jackson Jefferson Lincoln
+                  Madison Washington Wilson)
+    places = %w( Highland Hill Park Woodland Sunset Virginia)
+    numbers = %w( 1st 2nd 4th 5th )
+    @@streetnames =  trees + people + places + numbers
                     
     @@street_types = %w(St Ave Rd Blvd Trl Ter Rdg Pl Pkwy Ct Circle)
 

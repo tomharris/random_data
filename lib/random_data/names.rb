@@ -6,15 +6,7 @@ module RandomData
     # Returns a random letter
     
     def initial
-      
-      choice = rand(26) + 66
-
-      if choice == 91
-        return nil
-      else
-        return choice.chr
-      end
-  
+      ('A'..'Z').to_a.rand
     end
 
 
