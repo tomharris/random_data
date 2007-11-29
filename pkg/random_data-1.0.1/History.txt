@@ -1,9 +1,0 @@
-== 1.0.1 2007-09-17
-
-* 1 minor fix:
-  * Not creating the Random class properly by extending it (vs. including modules)
-
-== 1.0.0 2007-09-17
-
-* 1 major enhancement:
-  * Initial release
