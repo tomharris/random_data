@@ -20,21 +20,35 @@ or get the gem manually from http://rubyforge.org/frs/?group_id=4458
 Random.phone, Random.international_phone, Random.email
 
 === Time/Date Methods
-Random.date
+Random.date, Random.date_between
 
 === Location Methods
-Random.address_line_1, Random.address_line_2, Random.zipcode, Random.state, Random.country, Random.city,
+Random.address_line_1, Random.address_line_2, Random.zipcode, Random.uk_post_code, Random.state, Random.state_full, Random.country, Random.city
 	
 === Name Methods
-Random.firstname, Random.initial, Random.lastname, 
+Random.firstname, Random.initial, Random.lastname
 
 === Text Methods
 Random.alphanumeric, Random.paragraphs
 
+=== Grammatical Methods
+Random.grammatical_construct
+
+=== Number Methods
+Random.number, Random.bit, Random.bits
+
+=== Boolean Methods
+Random.boolean
+
+=== Array Extension
+Array.rand
+
+=== Choose From File Methods
+Random implements a method_missing helper that will choose a line at random from a file in your load path.  See Random::method_missing for details.
+
 Note that some methods take parameters to bound or limit the amount of data returned.  See RDocs for details.
 
-
-== Examples
+== Examples of Some Methods
 
 	>>Random.alphanumeric
 	=> "cfbutm3vYfhZXil0"
@@ -103,5 +117,8 @@ Note that some methods take parameters to bound or limit the amount of data retu
 == Contact
 Let me know if you have patches, comments, or suggestions: mailto:mike@subelsky.com
 
+== Special Thanks
+Major thanks to Hugh Sasse and {Paul Barry}[http://paulbarry.com/] for their contributions.
+
 == Copyright
-Copyright (c) 2007 {Mike Subelsky}[http://subelsky.com/], Baltimore, Maryland, released under the MIT license
+Copyright (c) 2008 {Mike Subelsky}[http://subelsky.com/], Baltimore, Maryland, released under the MIT license.

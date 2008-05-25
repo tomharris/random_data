@@ -4,7 +4,6 @@ module RandomData
 
     # Methods to create random strings and paragraphs.
     
-
      # Returns a string of random upper- and lowercase alphanumeric characters.  Accepts a size parameters, defaults to 16 characters.
      #
      # >> Random.alphanumeric

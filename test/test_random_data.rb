@@ -38,7 +38,11 @@ class TestRandomData < Test::Unit::TestCase
   end
 
   def test_should_return_random_zipcode
-    assert_equal 48408, Random.zipcode    
+    assert_equal "38408", Random.zipcode    
+  end
+
+  def test_should_return_random_uk_post_code
+    assert_equal "BM8 24DB", Random.uk_post_code    
   end
 
   def test_should_return_random_state
@@ -119,8 +123,25 @@ class TestRandomData < Test::Unit::TestCase
     assert_equal 8, Random.number(9)
   end
 
+  def test_should_return_random_bit
+    assert_equal 0, Random.bit
+  end
+
+  def test_should_return_random_bits
+    assert_equal 10, Random.bits(10).size
+    assert_equal [0, 1, 0, 0, 0, 0, 1, 0, 0, 1], Random.bits(10)
+  end
+
   def test_should_return_random_number_within_range
     assert_equal 13, Random.number(5..15)
+  end
+
+  def test_should_return_random_grammatical_construct
+    assert_equal "Bob bites Rover",
+      Random::grammatical_construct({:story => [:man, " bites ", :dog],
+                         :man => { :bob => "Bob"},
+                         :dog => {:a =>"Rex", :b =>"Rover"}},
+                         :story)
   end
   
 end

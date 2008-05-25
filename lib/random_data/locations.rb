@@ -9,8 +9,9 @@ module RandomData
                 Linden Maple Oak Pine Rose Walnut Willow)
     people = %w( Adams Franklin Jackson Jefferson Lincoln
                   Madison Washington Wilson)
+    people_uk = %w( Churchill Tyndale Latimer Cranmer )
     places = %w( Highland Hill Park Woodland Sunset Virginia)
-    numbers = %w( 1st 2nd 4th 5th )
+    numbers = %w( 1st 2nd 4th 5th 34th 42nd )
     @@streetnames =  trees + people + places + numbers
                     
     @@street_types = %w(St Ave Rd Blvd Trl Ter Rdg Pl Pkwy Ct Circle)
@@ -25,6 +26,8 @@ module RandomData
       "#{rand(40000)} #{@@streetnames.rand} #{@@street_types.rand}"
     end
 
+    alias :us_address_line_1 :address_line_1
+
     @@line2types = ["Apt", "Bsmt", "Bldg", "Dept", "Fl", "Frnt", "Hngr", "Lbby", "Lot", "Lowr", "Ofc", "Ph", "Pier", "Rear", "Rm", "Side", "Slip", "Spc", "Stop", "Ste", "Trlr", "Unit", "Uppr"]
 
     # Returns the first line of a US maiiling address (street number, street name, street type)
@@ -38,8 +41,25 @@ module RandomData
     end
 
     # Returns a random 5-digit string, not guaranteed to be a legitimate zip code.
+    # Legal zip codes can have leading zeroes and thus they need to be strings.  
+    
     def zipcode
-     rand(89999) + 10000  
+     "%05d" % rand(99999) 
+    end
+
+
+    # Returns a string providing something in the general form of a UK post code.  Like the zip codes, this might
+    # not actually be valid. Doesn't cover London whose codes are like "SE1".
+
+    def uk_post_code
+      post_towns = %w(BM CB CV LE LI LS KT MK NE OX PL YO)
+      # Can't remember any othes at the moment
+      number_1  = rand(100).to_s
+      number_2  = rand(100).to_s
+      # Easier way to do this? 
+      letters = ("AA".."ZZ").to_a.rand
+
+      return "#{post_towns.rand}#{number_1} #{number_2}#{letters}"
     end
 
     # from technoweenie: http://svn.techno-weenie.net/projects/plugins/us_states/lib/us_states.rb
@@ -56,7 +76,7 @@ module RandomData
                    ["Washington", "WA"], ["Wisconsin", "WI"], ["West Virginia", "WV"], ["Wyoming", "WY"]]                    
 
     # Returns a state 2-character abbreviation
-    #Random.state = "IL"
+    # Random.state = "IL"
     
     def state
       @@us_states.rand[1]

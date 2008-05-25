@@ -8,18 +8,32 @@ require 'random_data/locations'
 require 'random_data/names'
 require 'random_data/numbers'
 require 'random_data/text'
+require 'random_data/grammar'
 
 class Random
   extend RandomData::Booleans
   extend RandomData::ContactInfo
   extend RandomData::Dates
+  extend RandomData::Grammar
   extend RandomData::Locations
   extend RandomData::Names
   extend RandomData::Numbers
   extend RandomData::Text
 
-  # Looks for a file with the name methodname.dat, reads the lines from that file, then gives you a random line from that file
-  # Will also search your load path for the file.  Raises an error if it can't find the file.
+  # Looks for a file in the load path with the name methodname.dat, reads the lines from that file, then gives you a random line from that file.
+  # Raises an error if it can't find the file.  For example, given a file named "horse.dat" in your load path:
+  # >> Random.horse
+  # => "Stallion"
+  # >> Random.horse
+  # => "Pony"
+  # >> Random.horse
+  # => "Mare"
+  # >> Random.horse
+  # => "Clydesdale"
+  # >> Random.horse
+  # => "Stallion"
+  # >> Random.horse
+  # => "Mare"
   
   def self.method_missing(methodname)
     thing = "#{methodname}.dat"
