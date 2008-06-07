@@ -26,7 +26,7 @@ Random.date, Random.date_between
 Random.address_line_1, Random.address_line_2, Random.zipcode, Random.uk_post_code, Random.state, Random.state_full, Random.country, Random.city
 	
 === Name Methods
-Random.firstname, Random.initial, Random.lastname
+Random.firstname, Random.firstname_male, Random.firstname_female, Random.initial, Random.lastname
 
 === Text Methods
 Random.alphanumeric, Random.paragraphs
