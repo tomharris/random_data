@@ -1,3 +1,9 @@
+== 1.3.1 2008-06--06
+
+* 2 minor enhancements:
+  * Added added more last and firstnames (courtesy of Hugh Sasse)
+  * Added firstname_male and firstname_female (courtesy of Hugh Sasse)
+
 == 1.3.0 2008-05-25
 
 All these enhancements are from Hugh Sasse.  Thanks Hugh!
