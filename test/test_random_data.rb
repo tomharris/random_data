@@ -16,7 +16,7 @@ class TestRandomData < Test::Unit::TestCase
   end
   
   def test_should_return_random_email
-    assert_equal "iwalker@webmail.com", Random.email
+    assert_equal "ijohnson@webmail.com", Random.email
   end
 
   def test_should_return_random_date
@@ -62,7 +62,15 @@ class TestRandomData < Test::Unit::TestCase
   end
 
   def test_should_return_random_firstname
-    assert_equal "Joseph", Random.firstname    
+    assert_equal "Donald", Random.firstname    
+  end
+
+  def test_should_return_random_firstnamemale
+    assert_equal "Donald", Random.firstname_male 
+  end
+
+  def test_should_return_random_firstnamefemale
+    assert_equal "Charlotte", Random.firstname_female
   end
 
   def test_should_return_random_initial
@@ -70,7 +78,7 @@ class TestRandomData < Test::Unit::TestCase
   end
 
   def test_should_return_random_lastname
-    assert_equal "Moore", Random.lastname    
+    assert_equal "Clarke", Random.lastname    
   end
 
   def test_should_return_random_alphanumeric
