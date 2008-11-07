@@ -40,6 +40,11 @@ Random.number, Random.bit, Random.bits
 === Boolean Methods
 Random.boolean
 
+=== Markov Generator Methods
+Random.MarkovGenerator.new 
+Random.MarkovGenerator.insert
+Random.MarkovGenerator.generate
+
 === Array Extension
 Array.rand
 Array.roulette

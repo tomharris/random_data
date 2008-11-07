@@ -250,3 +250,28 @@ class TestRandomDataMethodMissing < Test::Unit::TestCase
   end
   
 end
+
+class TestRandomDataMarkovGenerator < Test::Unit::TestCase
+  def test_markov_generator
+    markov_machine = RandomData::MarkovGenerator.new(3)
+    text = IO.read "#{File.dirname(__FILE__)}/henry_v_prolog.txt"
+    text.split(/\s+/).each do |word|
+      markov_machine.insert(word)
+    end
+    assert_equal(["PROLOGUE", "Enter", "CHORUS",
+                 "CHORUS.", "O", "for", "a", "Muse",
+                 "of", "fire,", "that", "would", "ascend",
+                 "The", "brightest", "heaven", "of",
+                 "invention,", "A", "kingdom"],
+                 markov_machine.generate(20));
+    markov_machine = RandomData::MarkovGenerator.new(3)
+    text.scan(/\S{2}|\s+/).each do |word|
+      markov_machine.insert(word)
+    end
+    assert_equal(["PR", "OL", "OG", "UE", "\n\n", "En",
+                  "te", " ", "CH", "OR", "US", "\n\n",
+                  "CH", "OR", "US", "\n\n", "CH", "OR",
+                  "US", "\n\n"],
+                 markov_machine.generate(20));
+  end
+end

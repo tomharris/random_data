@@ -9,6 +9,7 @@ require 'random_data/names'
 require 'random_data/numbers'
 require 'random_data/text'
 require 'random_data/grammar'
+require 'random_data/markov'
 
 class Random
   extend RandomData::Booleans
