@@ -16,7 +16,7 @@ class TestRandomData < Test::Unit::TestCase
   end
   
   def test_should_return_random_email
-    assert_equal "ijohnson@webmail.com", Random.email
+    assert_equal "ijones@webmail.com", Random.email
   end
 
   def test_should_return_random_date
