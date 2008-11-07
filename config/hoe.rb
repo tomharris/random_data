@@ -2,7 +2,7 @@ require 'random_data/version'
 
 AUTHOR = 'Mike Subelsky'  # can also be an array of Authors
 EMAIL = "mike@subelsky.com"
-DESCRIPTION = "A Ruby gem that provides a Random singleton class with a series of methods for generating random test data including names, mailing addresses, dates, phone numbers, e-mail addresses, and text."
+DESCRIPTION = "A Ruby gem that provides a Random class with a series of methods for generating random test data including names, mailing addresses, dates, phone numbers, e-mail addresses, and text."
 GEM_NAME = 'random_data' # what ppl will type to install your gem
 RUBYFORGE_PROJECT = 'random-data' # The unix name for your project
 HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
@@ -10,7 +10,7 @@ DOWNLOAD_PATH = "http://rubyforge.org/projects/#{RUBYFORGE_PROJECT}"
 
 @config_file = "~/.rubyforge/user-config.yml"
 @config = nil
-RUBYFORGE_USERNAME = "unknown"
+RUBYFORGE_USERNAME = "subelsky"
 
 def rubyforge_username
   unless @config
