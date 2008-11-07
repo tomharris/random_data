@@ -1,4 +1,4 @@
-= Random
+= random_data
 
 This gem provides a Random singleton class with a series of methods for generating random test data including names, mailing addresses, dates, phone numbers, e-mail addresses, and text.  Instead of:
 

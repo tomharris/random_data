@@ -1,15 +1,16 @@
-$:.unshift File.dirname(__FILE__)
+dir = "#{File.dirname(__FILE__)}/random_data"
 
-require 'random_data/array_randomizer'
-require 'random_data/booleans'
-require 'random_data/contact_info'
-require 'random_data/dates'
-require 'random_data/locations'
-require 'random_data/names'
-require 'random_data/numbers'
-require 'random_data/text'
-require 'random_data/grammar'
-require 'random_data/markov'
+require "#{dir}/array_randomizer"
+require "#{dir}/booleans"
+require "#{dir}/contact_info"
+require "#{dir}/dates"
+require "#{dir}/locations"
+require "#{dir}/names"
+require "#{dir}/numbers"
+require "#{dir}/text"
+require "#{dir}/markov"
+require "#{dir}/grammar"
+require "#{dir}/version"
 
 class Random
   extend RandomData::Booleans
