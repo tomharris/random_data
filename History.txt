@@ -6,7 +6,7 @@
   * Added roulette method to Array (courtesy of Hugh Sasse)
 
 * 1 minor fix:
-  * Fixed newline bug in the name generator (courtesy of )
+  * Fixed newline bug in the name generator (courtesy of Harold Gimenez)
 
 == 1.3.1 2008-06-06
 
