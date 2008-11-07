@@ -152,6 +152,43 @@ class TestRandomData < Test::Unit::TestCase
                          :story)
   end
   
+  def test_roulette_wheel_with_positive_weights
+    weights=[10,5,1,1];
+    results = []
+    17.times do
+      results << weights.roulette
+    end
+    assert_equal([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0],
+                 results);
+    results = []
+    weights.roulette(17) do |i|
+      results << i
+    end
+    assert_equal([0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 results);
+  end
+
+  def test_roulette_wheel_with_zero_weights
+    weights=[0,0,0];
+    assert_raise RuntimeError do
+      weights.roulette
+    end
+    assert_raise RuntimeError do
+      x=0
+      weights.roulette(1){|i| x=i}
+    end
+  end
+
+  def test_roulette_wheel_with_negative_weights
+    weights=[2,-1,2];
+    assert_raise RuntimeError do
+      weights.roulette
+    end
+    assert_raise RuntimeError do
+      x=0
+      weights.roulette(1){|i| x=i}
+    end
+  end
 end
 
 class TestRandomDataMethodMissing < Test::Unit::TestCase

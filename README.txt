@@ -42,6 +42,7 @@ Random.boolean
 
 === Array Extension
 Array.rand
+Array.roulette
 
 === Choose From File Methods
 Random implements a method_missing helper that will choose a line at random from a file in your load path.  See Random::method_missing for details.
