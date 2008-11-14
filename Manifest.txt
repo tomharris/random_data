@@ -1,8 +1,10 @@
 History.txt
 License.txt
 Manifest.txt
+PostInstall.txt
 README.rdoc
 Rakefile
+config/website.yml
 lib/random_data.rb
 lib/random_data/array_randomizer.rb
 lib/random_data/booleans.rb
