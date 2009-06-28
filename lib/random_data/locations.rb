@@ -1,3 +1,5 @@
+# coding:utf-8
+
 module RandomData
   
   # Defines methods to return random location data.
