@@ -164,5 +164,14 @@ module RandomData
     def city
       @@cities.rand
     end
+
+    def ip_address
+      [
+        (0..255).to_a.rand,
+        (0..255).to_a.rand,
+        (0..255).to_a.rand,
+        (0..255).to_a.rand
+      ].join('.')
+    end
   end
 end
