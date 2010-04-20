@@ -65,12 +65,25 @@ class TestRandomData < Test::Unit::TestCase
     assert_equal "Donald", Random.firstname    
   end
 
+  def test_should_return_random_first_name
+    assert_equal "Donald", Random.first_name    
+  end
+
+
   def test_should_return_random_firstnamemale
     assert_equal "Donald", Random.firstname_male 
   end
 
+  def test_should_return_random_first_name_male
+    assert_equal "Donald", Random.first_name_male 
+  end
+
   def test_should_return_random_firstnamefemale
     assert_equal "Charlotte", Random.firstname_female
+  end
+
+  def test_should_return_random_first_name_female
+    assert_equal "Charlotte", Random.first_name_female
   end
 
   def test_should_return_random_initial
@@ -79,6 +92,14 @@ class TestRandomData < Test::Unit::TestCase
 
   def test_should_return_random_lastname
     assert_equal "Clarke", Random.lastname    
+  end
+
+  def test_should_return_random_last_name
+    assert_equal "Clarke", Random.last_name
+  end
+
+  def test_should_return_random_full_name
+    assert_equal "Donald Jones", Random.full_name 
   end
 
   def test_should_return_random_alphanumeric
@@ -145,7 +166,7 @@ class TestRandomData < Test::Unit::TestCase
   end
 
   def test_should_return_random_grammatical_construct
-    assert_equal "Bob bites Rover",
+    assert_equal "Bob bites Rex",
       Random::grammatical_construct({:story => [:man, " bites ", :dog],
                          :man => { :bob => "Bob"},
                          :dog => {:a =>"Rex", :b =>"Rover"}},

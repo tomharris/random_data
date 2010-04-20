@@ -24,6 +24,7 @@ module RandomData
     def lastname
       @@lastnames.rand.capitalize
     end
+    alias last_name lastname
 
     @@male_first_names = %w(ADAM ANTHONY ARTHUR BRIAN CHARLES CHRISTOPHER DANIEL DAVID DONALD EDGAR EDWARD EDWIN 
                             GEORGE HAROLD HERBERT HUGH JAMES JASON JOHN JOSEPH KENNETH KEVIN MARCUS MARK MATTHEW 
@@ -46,6 +47,7 @@ module RandomData
     def firstname
       @@first_names.rand.capitalize
     end
+    alias first_name firstname
 
 
     # Returns a random male firstname
@@ -57,6 +59,7 @@ module RandomData
     def firstname_male
       @@male_first_names.rand.capitalize
     end
+    alias first_name_male firstname_male
 
 
     # Returns a random female firstname
@@ -68,6 +71,11 @@ module RandomData
     def firstname_female
       @@female_first_names.rand.capitalize
     end
-
+    alias first_name_female firstname_female
+    
+    # Returns a random full name
+    def full_name(options = { :initial => false, :gender => nil })
+      "#{first_name} #{last_name}"
+    end
   end
 end
