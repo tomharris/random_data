@@ -20,8 +20,6 @@ module RandomData
       s
     end
 
-    @@characters = %w{a b c d e f g h i j k l m n o p q r s t u v w x y z}
-
     # Returns a string of random alphabet characters. Accepts a size parameter, default 16 characters.
     # Also accepts a type parameter, of either :upper (for all upcase), :lower (for all lowercase), or :mixed.
     # Defaults to :lower.
@@ -37,7 +35,7 @@ module RandomData
     def alpha(size=16, type = :lower)
       s = ''
       size.times do
-        char = @@characters.rand
+        char = ('a'..'z').to_a.rand
         char.upcase! if (type == :mixed and Kernel.rand(2) == 1) or type == :upper
         s << char
       end
