@@ -8,8 +8,8 @@ begin
     gem.name = "random_data"
     gem.summary = "A Ruby gem that provides a Random class with a series of methods for generating random test data including names, mailing addresses, dates, phone numbers, e-mail addresses, and text."
     gem.description = "A Ruby gem that provides a Random class with a series of methods for generating random test data including names, mailing addresses, dates, phone numbers, e-mail addresses, and text."
-    gem.email = "random_data@mikeshop.net"
-    gem.authors = ["Mike Subelsky"]
+    gem.email = "thomas.e.harris@gmail.com"
+    gem.authors = ["Mike Subelsky", "Tom Harris"]
   end
 
 rescue LoadError
