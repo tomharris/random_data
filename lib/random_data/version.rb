@@ -1,3 +1,3 @@
 module RandomData #:nodoc:
-  VERSION = '1.5.0' #:nodoc:
+  VERSION = '1.5.2' #:nodoc:
 end
