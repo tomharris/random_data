@@ -6,6 +6,7 @@ GEM
       metaclass (~> 0.0.1)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
