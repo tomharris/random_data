@@ -96,7 +96,7 @@ module RandomData
     # Returns a state 2-character abbreviation
     # Random.state = "IL"
     
-    def state
+    def state_code
       @@us_states.rand[1]
     end
 
