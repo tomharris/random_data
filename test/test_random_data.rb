@@ -103,11 +103,13 @@ class TestRandomData < Test::Unit::TestCase
   end
 
   def test_should_return_random_companyname
-    assert_equal "Jones Consulting, PLLC", Random.companyname    
+    srand(17)
+    assert_equal "Garcia Marketing, Corp.", Random.companyname    
   end
 
   def test_should_return_random_company_name
-    assert_equal "Jones Consulting, PLLC", Random.company_name
+    srand(9999999999)
+    assert_equal "Anthony, Edwards & Edwards Publishing", Random.company_name
   end
 
   def test_should_return_random_alphanumeric

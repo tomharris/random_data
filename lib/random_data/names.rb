@@ -33,10 +33,10 @@ module RandomData
       if final.count == 1
         "#{final.first} #{@@company_types.rand}, #{@@incorporation_types.rand}"
       else
-        incorporation_type = rand(1).times.collect{|e| @@incorporation_types.rand}
-        company_type = rand(1).times.collect{|e| @@company_types.rand}
-        trailer = company_type ? " #{company_type}" : ""
-        trailer << ", #{incorporation_type}" if incorporation_type
+        incorporation_type = rand(17) % 2 == 0 ? @@incorporation_types.rand : nil
+        company_type = rand(17) % 2 == 0 ? @@company_types.rand : nil
+        trailer = company_type.nil? ? "" : " #{company_type}"
+        trailer << ", #{incorporation_type}" unless incorporation_type.nil?
         "#{final[0..-1].join(', ')} & #{final.last}#{trailer}"
       end
     end
