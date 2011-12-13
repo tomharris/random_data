@@ -14,7 +14,34 @@ module RandomData
                      KIRBY KIRK LAKE LEE LEWIS MARTIN MARTINEZ MAJOR MILLER MOORE OATES PETERS PETERSON ROBERTSON 
                      ROBINSON RODRIGUEZ SMITH SMYTHE STEVENS TAYLOR THATCHER THOMAS THOMPSON WALKER WASHINGTON WHITE 
                      WILLIAMS WILSON YORKE)
+    @@incorporation_types = %w{LLC Inc Inc. Ltd. LP LLP Corp. PLLC}
+    @@company_types       = %w{Clothier Publishing Computing Consulting Engineering Industries Marketing Manufacturing}
 
+    # Returns a random company name
+    #
+    # >> Random.company_name
+    #
+    # "Harris & Thomas"
+
+    def companyname
+      num = rand(5)
+      if num == 0
+        num = 1
+      end
+      final = num.times.collect { @@lastnames.rand.capitalize }
+
+      if final.count == 1
+        "#{final.first} #{@@company_types.rand}, #{@@incorporation_types.rand}"
+      else
+        incorporation_type = rand(1).times.collect{|e| @@incorporation_types.rand}
+        company_type = rand(1).times.collect{|e| @@company_types.rand}
+        trailer = company_type ? " #{company_type}" : ""
+        trailer << ", #{incorporation_type}" if incorporation_type
+        "#{final[0..-1].join(', ')} & #{final.last}#{trailer}"
+      end
+    end
+
+    alias company_name companyname
     # Returns a random lastname
     #
     # >> Random.lastname

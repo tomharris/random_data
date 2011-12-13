@@ -102,6 +102,14 @@ class TestRandomData < Test::Unit::TestCase
     assert_equal "Donald Jones", Random.full_name 
   end
 
+  def test_should_return_random_companyname
+    assert_equal "Jones Consulting, PLLC", Random.companyname    
+  end
+
+  def test_should_return_random_company_name
+    assert_equal "Jones Consulting, PLLC", Random.company_name
+  end
+
   def test_should_return_random_alphanumeric
     assert_equal "8O3dNFmAUqYr2YEY", Random.alphanumeric    
   end
