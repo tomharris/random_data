@@ -12,11 +12,11 @@ module RandomData
     people = %w( Adams Franklin Jackson Jefferson Lincoln
                   Madison Washington Wilson)
     people_uk = %w( Churchill Tyndale Latimer Cranmer )
-    places = %w( Highland Hill Park Woodland Sunset Virginia)
+    places = %w( Highland Hill Park Woodland Sunset Virginia Haven Montreal)
     numbers = %w( 1st 2nd 4th 5th 34th 42nd )
     @@streetnames =  trees + people + places + numbers
                     
-    @@street_types = %w(St Ave Rd Blvd Trl Ter Rdg Pl Pkwy Ct Circle)
+    @@street_types = %w(St Ave Rd Blvd Trl Ter Rdg Pl Pkwy Ct Circle Dr Pvt)
 
     # Returns the first line of a US maiiling address (street number, street name, street type)
     #
