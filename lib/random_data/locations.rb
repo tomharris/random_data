@@ -18,6 +18,15 @@ module RandomData
                     
     @@street_types = %w(St Ave Rd Blvd Trl Ter Rdg Pl Pkwy Ct Circle Dr Pvt)
 
+    # Returns a random street name  followed by a street type.
+    #
+    # Example:
+    #
+    # Random.street_name = "Willow Ter"
+    def street_name
+      "#{@@streetnames.rand} #{@@street_types.rand}"
+    end
+    
     # Returns the first line of a US maiiling address (street number, street name, street type)
     #
     # Example:
