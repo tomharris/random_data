@@ -3,6 +3,11 @@ module RandomData
   
   module ContactInfo
 
+   # Returns a randomly-generated string of represents an 11 digit US mobile device number.
+   def mdn
+     "1#{rand(800) + 200}#{rand(800)+200}#{rand(9000)+1000}"
+   end
+
    # Returns a randomly-generated string of digits that roughly resembles a US telephone number.  Not guaranteed to be a valid area code.
    def phone
      "#{rand(900) + 100}-#{rand(900)+100}-#{rand(10000)+1000}"
