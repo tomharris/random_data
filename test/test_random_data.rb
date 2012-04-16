@@ -6,6 +6,10 @@ class TestRandomData < Test::Unit::TestCase
     # to make random numbers deterministic for testing purposes
     srand(100)
   end
+
+  def test_should_return_random_mdn
+    assert_equal "17209929039", Random.mdn
+  end
   
   def test_should_return_random_phone_number
     assert_equal "620-892-9039", Random.phone
