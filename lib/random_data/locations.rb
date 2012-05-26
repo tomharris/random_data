@@ -12,12 +12,21 @@ module RandomData
     people = %w( Adams Franklin Jackson Jefferson Lincoln
                   Madison Washington Wilson)
     people_uk = %w( Churchill Tyndale Latimer Cranmer )
-    places = %w( Highland Hill Park Woodland Sunset Virginia)
+    places = %w( Highland Hill Park Woodland Sunset Virginia Haven Montreal)
     numbers = %w( 1st 2nd 4th 5th 34th 42nd )
     @@streetnames =  trees + people + places + numbers
                     
-    @@street_types = %w(St Ave Rd Blvd Trl Ter Rdg Pl Pkwy Ct Circle)
+    @@street_types = %w(St Ave Rd Blvd Trl Ter Rdg Pl Pkwy Ct Circle Dr Pvt)
 
+    # Returns a random street name  followed by a street type.
+    #
+    # Example:
+    #
+    # Random.street_name = "Willow Ter"
+    def street_name
+      "#{@@streetnames.rand} #{@@street_types.rand}"
+    end
+    
     # Returns the first line of a US maiiling address (street number, street name, street type)
     #
     # Example:
@@ -64,6 +73,13 @@ module RandomData
       return "#{post_towns.rand}#{number_1} #{number_2}#{letters}"
     end
 
+    # Return a string version of a "visually" valid canadian postal code
+    def canada_post_code
+      valid_letters = %w(A B C E G H J K L M N P R S T V W X Y Z) #only these letters are valid in canadian postal codes
+      
+      return "#{valid_letters.rand}#{rand(9).to_s}#{valid_letters.rand} #{rand(9).to_s}#{valid_letters.rand}#{rand(9).to_s}"
+    end
+    
     # from technoweenie: http://svn.techno-weenie.net/projects/plugins/us_states/lib/us_states.rb
     @@us_states = [["Alaska", "AK"], ["Alabama", "AL"], ["Arkansas", "AR"], ["Arizona", "AZ"], 
                    ["California", "CA"], ["Colorado", "CO"], ["Connecticut", "CT"], ["District of Columbia", "DC"], 
@@ -80,10 +96,22 @@ module RandomData
     # Returns a state 2-character abbreviation
     # Random.state = "IL"
     
-    def state
+    def state_code
       @@us_states.rand[1]
     end
 
+    # from http://en.wikipedia.org/wiki/Canadian_provinces
+    @@can_provinces = [["Ontario", "ON"], ["Quebec", "QC"], ["Nova Scotia", "NS"], ["New Brunswick", "NB"], ["Manitoba", "MB"], 
+                        ["British Columbia", "BC"],["Prince Edward Island", "PE"],["Saskatchewan", "SK"],["Alberta", "AB"],
+                        ["Newfoundland and Labrador", "NL"], ["Northwest Territories", "NT"], ["Yukon", "YT"],
+                        ["Nunavut", "NU"]]
+
+    # Returns a Canadian province or territory 2-character abbreviation
+    # Random.province = "ON"
+    def canadian_province
+      @@can_provinces.rand[1]
+    end
+    
     # Returns a full state name
     #Random.state_full = "Texas"
 
@@ -91,6 +119,12 @@ module RandomData
       @@us_states.rand[0]   
     end
 
+    # Returns a full canadian province name
+    # Random.canadian_province_full = "Ontario"
+    def canadian_province_full
+      @@can_provinces.rand[0]
+    end
+    
     # from http://siteresources.worldbank.org/DATASTATISTICS/Resources/CLASS.XLS
     @@countries = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", 
                   "Austria", "Azerbaijan", "Bahamas, The", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", 
@@ -129,6 +163,15 @@ module RandomData
      
     def city
       @@cities.rand
+    end
+
+    def ip_address
+      [
+        (0..255).to_a.rand,
+        (0..255).to_a.rand,
+        (0..255).to_a.rand,
+        (0..255).to_a.rand
+      ].join('.')
     end
   end
 end

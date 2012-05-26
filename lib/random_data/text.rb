@@ -19,6 +19,28 @@ module RandomData
       size.times { s << (i = Kernel.rand(62); i += ((i < 10) ? 48 : ((i < 36) ? 55 : 61 ))).chr }
       s
     end
+
+    # Returns a string of random alphabet characters. Accepts a size parameter, default 16 characters.
+    # Also accepts a type parameter, of either :upper (for all upcase), :lower (for all lowercase), or :mixed.
+    # Defaults to :lower.
+    #
+    # >> Random.alpha
+    #
+    # "anepalqnitpxlfri"
+    #
+    # >> Random.alpha(5, :upper)
+    #
+    # "EIBPL"
+
+    def alpha(size=16, type = :lower)
+      s = ''
+      size.times do
+        char = ('a'..'z').to_a.rand
+        char.upcase! if (type == :mixed and Kernel.rand(2) == 1) or type == :upper
+        s << char
+      end
+      s
+    end
     
     # TODO make these more coherent #:nodoc:
 
@@ -51,7 +73,14 @@ module RandomData
     # >> Random.paragraphs  
     #
     # "I might jump an open drawbridge or Tarzan from a vine, beause I'm the unknown stuntman that makes Eastwood look so fine.\n\n \Always fighting all the evil forces bringing peace and justice to all. \n\n"
-     
+  
+   def words(num = 2)
+    text = ''
+    sentence = @@sentences.sort_by { rand }.first
+    words = sentence.split(/\s/).sort_by { rand }
+    words[0..(num-1)].join(" ")
+   end
+  
    def paragraphs(num = 2)
      text = ''
  

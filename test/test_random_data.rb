@@ -46,7 +46,7 @@ class TestRandomData < Test::Unit::TestCase
   end
 
   def test_should_return_random_state
-    assert_equal "DE", Random.state    
+    assert_equal "DE", Random.state_code
   end
 
   def test_should_return_random_state_full
