@@ -1,5 +1,3 @@
-require 'date'
-
 module RandomData
   
   # Defines methods for random date generation
