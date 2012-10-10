@@ -46,7 +46,7 @@ class TestRandomData < Test::Unit::TestCase
   end
 
   def test_should_return_random_state
-    assert_equal "DE", Random.state    
+    assert_equal "DE", Random.state_code
   end
 
   def test_should_return_random_state_full
@@ -100,6 +100,16 @@ class TestRandomData < Test::Unit::TestCase
 
   def test_should_return_random_full_name
     assert_equal "Donald Jones", Random.full_name 
+  end
+
+  def test_should_return_random_companyname
+    srand(17)
+    assert_equal "Garcia Marketing, Corp.", Random.companyname    
+  end
+
+  def test_should_return_random_company_name
+    srand(9999999999)
+    assert_equal "Anthony, Edwards & Edwards Publishing", Random.company_name
   end
 
   def test_should_return_random_alphanumeric
