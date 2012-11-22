@@ -78,18 +78,10 @@ module RandomData
                    ["Washington", "WA"], ["Wisconsin", "WI"], ["West Virginia", "WV"], ["Wyoming", "WY"]]                    
 
     # Returns a state 2-character abbreviation
-    # Random.state = "IL"
+    # Random.state_code = "IL"
     
     def state_code
       @@us_states.rand[1]
-    end
-
-    # This method is deprecated, and will not
-    # work in 1.9.x because Random already defines
-    # state as a private method. Use state_code
-    # instead.
-    def state
-      state_code
     end
 
     # Returns a full state name

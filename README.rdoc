@@ -23,7 +23,7 @@ Random.phone, Random.international_phone, Random.email
 Random.date, Random.date_between
 
 === Location Methods
-Random.address_line_1, Random.address_line_2, Random.zipcode, Random.uk_post_code, Random.state, Random.state_full, Random.country, Random.city
+Random.address_line_1, Random.address_line_2, Random.zipcode, Random.uk_post_code, Random.state_code, Random.state_full, Random.country, Random.city
 	
 === Name Methods
 Random.firstname, Random.firstname_male, Random.firstname_female, Random.initial, Random.lastname
@@ -111,7 +111,7 @@ Note that some methods take parameters to bound or limit the amount of data retu
 
 	(Note that the zipcodes are totally random and may not be real zipcodes)
 
-	>> Random.state
+	>> Random.state_code
 	=> "MD"
 
 	>> Random.state_full
