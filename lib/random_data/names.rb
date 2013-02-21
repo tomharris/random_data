@@ -21,24 +21,15 @@ module RandomData
     #
     # >> Random.company_name
     #
-    # "Harris & Thomas"
+    # "Harris & Thomas & Edwin"
 
     def companyname
-      num = rand(5)
-      if num == 0
-        num = 1
-      end
-      final = num.times.collect { @@lastnames.rand.capitalize }
-
-      if final.count == 1
-        "#{final.first} #{@@company_types.rand}, #{@@incorporation_types.rand}"
-      else
-        incorporation_type = rand(17) % 2 == 0 ? @@incorporation_types.rand : nil
-        company_type = rand(17) % 2 == 0 ? @@company_types.rand : nil
-        trailer = company_type.nil? ? "" : " #{company_type}"
-        trailer << ", #{incorporation_type}" unless incorporation_type.nil?
-        "#{final[0..-1].join(', ')} & #{final.last}#{trailer}"
-      end
+      final = rand(1..3).times.collect { @@lastnames.rand.capitalize }
+      incorporation_type = [true, false].rand ? @@incorporation_types.rand : nil
+      company_type = [true, false].rand ? @@company_types.rand : nil
+      trailer = company_type.nil? ? "" : " #{company_type}"
+      trailer << ", #{incorporation_type}" unless incorporation_type.nil?
+      final.count == 1 ? "#{final.first}#{trailer}" : "#{final[0..-2].join(', ')} & #{final.last}#{trailer}"
     end
 
     alias company_name companyname
