@@ -12,7 +12,7 @@ module RandomData
     # >> Random.number(5)
     # => 1
     def number(n)
-      n.is_a?(Range) ? n.to_a.rand : rand(n) 
+      Random.new.rand(n)
     end
 
     # return a random bit, 0 or 1.
